@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 * Pixel Point Creative - Cinch Menu Module
 * License: GNU General Public License version
@@ -14,18 +14,21 @@
 var onProcess = false;
 jQuery(document).ready(function($){
 	var acMenu = $("#accordion_menu_<?php echo $module->id;?>");
-	acMenu.children("li").eq(0).addClass("first");
-	acMenu.children("li").eq(acMenu.children("li").length - 1 ).addClass("last");
-	
+	acMenu.children("li").first().addClass("first");
+	acMenu.children("li").last().addClass("last");
+	acMenu.find("ul").each(function() {
+		$(this).children("li").first().addClass("first");
+		$(this).children("li").last().addClass("last");
+	});
 	acMenu.find("a").click(function(){
 		if ($(this).attr("target") == '_blank') {
 			window.open($(this).attr("href"));
 		} else {
 			location = $(this).attr("href");
-		}		
+		}
 		return false;
 	});
-	
+
 	try{
 		var current = $("#accordion_menu_<?php echo $module->id;?> li.opened");
 		var root = current.parents('.accordion-menu'), lis = current.parents('li');
@@ -38,39 +41,47 @@ jQuery(document).ready(function($){
 //			if(current.parent().prop("li")){
 //				current.parent().addClass("opened");
 //			}
-//			current = current.parent();	
+//			current = current.parent();
 //		}
 //	}
 	$("#accordion_menu_<?php echo $module->id;?> li.opened > .ul-wrapper").css("display","block");
-	$("#accordion_menu_<?php echo $module->id;?> li.opened > .item-wrapper  .menu-button img").attr("src", "<?php echo $bulletActive;?>");
- 
+	$("#accordion_menu_<?php echo $module->id;?> li.opened > .item-wrapper .menu-button img").attr("src", "<?php echo $bulletActive;?>");
+
 <?php if($event == "click"){?>
-acMenu.find(".item-wrapper").click(function(){
-	var li = $(this).parent();
-	if(!li.hasClass("opened")){
-		var openedLi = li.parent().children(".opened");
-		var ul = li.children(".ul-wrapper");
-		openedLi.children(".ul-wrapper").slideUp(<?php echo $duration;?>);
-		openedLi.children(".item-wrapper").children(".menu-button").children("img").attr("src", "<?php echo $bulletImage;?>");
-		openedLi.removeClass("opened");
-		if(li.children(".ul-wrapper").length !=0){
-			li.addClass("opened");
-			li.children(".item-wrapper").children(".menu-button").children("img").attr("src", "<?php echo $bulletActive;?>");
-			ul.slideDown(<?php echo $duration;?>);
+	acMenu.find(".item-wrapper").click(function(){
+		var li = $(this).parent('li');
+		if(li.hasClass("opened")){
+			// Close this item and once slideUp is complete, ensure children are also closed
+			li.children(".ul-wrapper").slideUp(<?php echo $duration;?>, function() {
+				li.find(".item-wrapper > .menu-button > img").attr("src", "<?php echo $bulletImage;?>");
+				li.find("li.opened").removeClass("opened");
+				li.find(".ul-wrapper").css("display","none");
+				li.removeClass("opened");
+			});
+		}else{
+			// Close all siblings (and their children) and open this one
+			var openedLi = li.parent().children("li.opened");
+			openedLi.children(".ul-wrapper").slideUp(<?php echo $duration;?>, function() {
+				openedLi.find(".item-wrapper > .menu-button > img").attr("src", "<?php echo $bulletImage;?>");
+				openedLi.find("li.opened").removeClass("opened");
+				openedLi.find(".ul-wrapper").css("display","none");
+				openedLi.removeClass("opened");
+			});
+			var ul = li.children(".ul-wrapper");
+			if(ul.length != 0){
+				li.addClass("opened");
+				li.children(".item-wrapper").children(".menu-button").children("img").attr("src", "<?php echo $bulletActive;?>");
+				ul.slideDown(<?php echo $duration;?>);
+			}
 		}
-}	else{
-		li.children(".item-wrapper").children(".menu-button").children("img").attr("src", "<?php echo $bulletImage;?>");
-		li.children(".ul-wrapper").slideUp(<?php echo $duration;?>);
-		li.removeClass("opened");
-	}
-	return false;
+		return false;
+	});
 });
-});
-<?php echo "</script>";}else{?>
+<?php }else{?>
 	acMenu.find("li").mouseenter(function(){
 		if(onProcess) return true;
 		var ul = $(this).children(".ul-wrapper");
-		if(ul.length){ 
+		if(ul.length){
 			onProcess = true;
 			$(this).addClass("opened");
 			$(this).children(".item-wrapper").children(".menu-button").children("img").attr("src", "<?php echo $bulletActive;?>");
@@ -80,15 +91,16 @@ acMenu.find(".item-wrapper").click(function(){
 		}
 	}).mouseleave(function(){
 		if(onProcess) return true;
-		if($(this).children(".ul-wrapper").length){ 
+		if($(this).children(".ul-wrapper").length){
 			onProcess = true;
 			$(this).children(".item-wrapper").children(".menu-button").children("img").attr("src", "<?php echo $bulletImage;?>");
 			$(this).children(".ul-wrapper").slideUp(<?php echo $duration;?>,function(){
 				onProcess = false;
 			});
 		}
-        onProcess = false;
+		onProcess = false;
 		$(this).removeClass("opened");
 	});
 });
-<?php echo "</script>";} ?>
+<?php } ?>
+</script>
