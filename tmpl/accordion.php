@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 * Pixel Point Creative - Cinch Menu Module
 * License: GNU General Public License version
@@ -9,11 +9,9 @@
 */
 defined('_JEXEC') or die;
 jimport( 'joomla.html.parameter' );
+JHtml::stylesheet('modules/'.$module->module.'/tmpl/css/accordion.css');
 $document =& JFactory::getDocument();
-ob_start();
 include  "css" . DS . 'styles-accordion.php';
-$style = ob_get_contents();
-ob_end_clean();
 $document->addStyleDeclaration( $style );
 include "js/accordion.js.php";
 ?>
@@ -24,10 +22,10 @@ include "js/accordion.js.php";
 		$menu		= $app->getMenu();
 		$active = ($menu->getActive()) ? $menu->getActive() : $menu->getDefault();
 		$path		= $active->tree;
-		
+
 		for($i = 0; $i < count($menus); $i++){
 			if($i == 0){?>
-			     <ul class='accordion-menu' id='accordion_menu_<?php echo $module->id;?>'>
+			     <ul class='accordion-menu accordion-menu-<?php echo $textAlign;?>' id='accordion_menu_<?php echo $module->id;?>'>
 			<?php	$countUlOpened++;
 			}
 			$class = "";
@@ -40,7 +38,7 @@ include "js/accordion.js.php";
 			$li = "<li ".$class.">";
 			$li .= "<div class='item-wrapper' >";
 			if($showBullet == "true"){
-				$divMenuButton = "<div class='menu-button' >";
+				$divMenuButton = "<div class='menu-button menu-button-".$bulletAlign."' >";
 				if($i < count($menus)-1 && $menus[$i+1]->level > $menus[$i]->level){
 					$divMenuButton.="<img class='menuicon' alt='' src='".$bulletImage."'/>";
 				}
@@ -51,7 +49,7 @@ include "js/accordion.js.php";
 			$target = "";
 			//echo $menus[$i]->browserNav . '<br/>';
 			switch ($menus[$i]->browserNav) :
-				
+
 				case 1:
 					$target=" target='_blank' ";
 					break;
@@ -68,7 +66,7 @@ include "js/accordion.js.php";
 				echo "<div class='ul-wrapper'><ul>";
 				$countUlOpened++;
 				$level++;
-				
+
 			}
 			if($i < count($menus)-1 && $menus[$i+1]->level < $menus[$i]->level ){
 				echo "</li></ul></div></li>";
