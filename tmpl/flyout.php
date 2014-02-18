@@ -5,10 +5,11 @@
 * See: http://www.gnu.org/copyleft/gpl.html
 * Copyright (c) Pixel Point Creative LLC.
 * More info at http://www.pixelpointcreative.com
-* Last Updated: 3/14/13
+* Last Updated: 2/18/14
 */
+
 // No direct access.
-defined('_JEXEC') or die;
+defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport('joomla.html.parameter');
 JHtml::stylesheet('modules/'.$module->module.'/tmpl/css/flyout.css');
