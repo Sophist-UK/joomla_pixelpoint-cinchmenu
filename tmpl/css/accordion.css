@@ -1,86 +1,123 @@
 /*
 * Pixel Point Creative - Cinch Menu Module
-* License: GNU General Public License version
-* See: http://www.gnu.org/copyleft/gpl.html
+* License:GNU General Public License version
+* See:http://www.gnu.org/copyleft/gpl.html
 * Copyright (c) Pixel Point Creative LLC.
 * More info at http://www.pixelpointcreative.com
-* Last Updated: 3/14/13
+* Last Updated:3/14/13
 */
-.accordion-menu a{
-	text-decoration: none;
-	background: none;
-	font-family: Arial;
+
+ul.accordion-menu {
+	border:1px solid #1a1a1a;
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	line-height:16px;
+	list-style:none !important;
+	font-size:12px;
 }
-.accordion-menu a:hover,
-.accordion-menu a:visited,
-.accordion-menu a:active,
-.accordion-menu a:focus{
-	background: none;
+ul.accordion-menu-left {
+	text-align:left;
+}
+ul.accordion-menu-right {
+	text-align:right;
+}
+ul.accordion-menu li {
+	border-top:1px solid #1a1a1a;
+}
+ul.accordion-menu > li.first,
+ul.accordion-menu > li:first-child {
+	border-top:0px;
 }
 
-.accordion-menu  a img {
+ul.accordion-menu a,
+ul.accordion-menu a:hover,
+ul.accordion-menu a:visited,
+ul.accordion-menu a:active,
+ul.accordion-menu a:focus {
+	font-family:Arial;
+	background:none;
+}
+ul.accordion-menu li > .item-wrapper > .menu-button-left,
+ul.accordion-menu li > .item-wrapper > .menu-button-right {
+	padding:12px 0px;
+	line-height:10px;
+}
+ul.accordion-menu li > .item-wrapper > .menu-button-left {
+	float:left;
+}
+ul.accordion-menu li > .item-wrapper > .menu-button-right {
+	float:right;
+}
+ul.accordion-menu li > .item-wrapper > .menu-button-left > img {
+	padding-left:10px;
+}
+ul.accordion-menu li > .item-wrapper > .menu-button-right > img {
+	padding-right:10px;
+}
+ul.accordion-menu li  > .item-wrapper > .menu-link {
+	min-height:35px;
+	overflow-y:hidden;
+}
+ul.accordion-menu li > .item-wrapper > .menu-link > a {
+	display:inline-block;
+	text-decoration:none;
+	background:none;
+	padding:10px 10px 9px 10px;
 	vertical-align:middle;
-	border: 0 none;
-    height: auto;
-    max-width: 100%;
+	}
+ul.accordion-menu li > .item-wrapper > .menu-link > a > img {
+	vertical-align:middle;
+	border:0 none;
+	height:auto;
+	max-width:100%;
 	padding:0 5px 0 0;
 }
-
-.accordion-menu li{
-    cursor: pointer;
-    background:none !important;
+ul.accordion-menu-left li > .item-wrapper > .menu-link > a {
+	float:left;
+}
+ul.accordion-menu-right li > .item-wrapper > .menu-link > a {
+	float:right;
+}
+ul.accordion-menu > li > .item-wrapper > .menu-link > a {
+	font-weight:bold;
+}
+ul.accordion-menu li > .item-wrapper:after {
+	content: ".";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
 }
 
-.accordion-menu .opened{
-    border-bottom:none!important;
+ul.accordion-menu li > .ul-wrapper {
+	display:none;
 }
-.accordion-menu li:last-child, .accordion-menu > li.last {
-    border-bottom: 1px solid #1a1a1a!important;
-    margin-bottom:-1px;
-}
-.accordion-menu > li > .item-wrapper{
-	height: 35px;
-	display:inline-block;
-	width:100%;
-}
-.accordion-menu > li > .item-wrapper a{
-	line-height: 35px;
-	font-size: 12px;
-	font-weight: bold;
-}
-.accordion-menu li .item-wrapper .menu-button{
-	width: 16px;
-	height: 16px;
-	margin: 9px 5px 0px 5px;
-	overflow: hidden;
-}
-
-.accordion-menu li .item-wrapper .menu-link{
-	width:81%;
-}
-
-.accordion-menu  li .ul-wrapper{
-	display: none;
-}
-
-.accordion-menu  li ul li .item-wrapper{
-	/* height: 30px;	 */
-	display:inline-block;
-	width:97%;
-}
-.accordion-menu  li ul li .item-wrapper a{
-line-height:35px;}
-
 ul.accordion-menu li ul {
-margin:0px;
-padding:0px;
-margin-bottom:-1px;
- }
- ul.accordion-menu li ul li .item-wrapper{
- margin:0px;
- padding-left:12px!important;
- }
-  ul.accordion-menu li ul li li{
- margin:0px;
- padding-left:0px!important;
- }
+	margin:0px;
+	padding:0px;
+}
+ul.accordion-menu-left li li > .item-wrapper > .menu-link > a {
+	padding-left:20px;
+}
+ul.accordion-menu-right li li > .item-wrapper > .menu-link > a {
+	padding-right:20px;
+}
+ul.accordion-menu-left li li li > .item-wrapper > .menu-link > a {
+	padding-left:30px;
+}
+ul.accordion-menu-right li li li > .item-wrapper > .menu-link > a {
+	padding-right:30px;
+}
+ul.accordion-menu-left li li li li > .item-wrapper > .menu-link > a {
+	padding-left:40px;
+}
+ul.accordion-menu-right li li li li > .item-wrapper > .menu-link > a {
+	padding-right:40px;
+}
+ul.accordion-menu-left li li li li li > .item-wrapper > .menu-link > a {
+	padding-left:50px;
+}
+ul.accordion-menu-right li li li li li > .item-wrapper > .menu-link > a {
+	padding-right:50px;
+}
