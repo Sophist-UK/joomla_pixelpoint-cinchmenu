@@ -13,6 +13,14 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport( 'joomla.html.parameter' );
 JHtml::stylesheet('modules/'.$module->module.'/tmpl/css/accordion.css');
+
+// Load custom.css if it exists
+$file = 'modules/'.$module->module.'/tmpl/css/custom.css';
+if (is_file($file))
+{
+	JHtml::stylesheet($file);
+}
+
 $document =& JFactory::getDocument();
 include  "css" . DS . 'styles-accordion.php';
 $document->addStyleDeclaration( $style );
