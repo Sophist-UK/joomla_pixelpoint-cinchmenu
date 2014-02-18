@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site"	method="upgrade">
+	<name>Cinch Menu</name>
+     <author>Pixel Point Creative - Cinch Menu Module</author>
+     <creationDate>March 2013</creationDate>
+     <copyright>Copyright (c) Pixel Point Creative LLC.</copyright>
+     <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+     <authorEmail>info@pixelpointcreative.com</authorEmail>
+     <authorUrl>www.pixelpointcreative.com</authorUrl>
+     <version>1.6</version>
+	<description>     
+    	<![CDATA[
+	<style type="text/css">
+		.panel {background: #ddd;
+		background-image: -moz-linear-gradient(100% 100% 90deg, rgba(225,225,225,1), rgba(255,255,255,1));
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,1)), to(rgba(225,225,225,1)));
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e1e1e1');
+		-moz-border-radius: 2px 2px 2px 2px;
+		-webkit-border-radius: 2px 2px 2px 2px;
+		border-radius: 2px 2px 2px 2px;
+		-moz-box-shadow: 1px 1px 2px #ddd;
+		-webkit-box-shadow: 1px 1px 2px #ddd;
+		border-box-shadow: 1px 1px 2px #ddd;
+		border: 1px solid #ccc;
+		padding: 6px 10px;		
+		color: #444;		
+		text-decoration: none;}
+		.pane-sliders .title {padding: 4px; }
+		.pane-sliders .panel h3 {border-bottom:none;}
+		.panelform a {color:#828627;}
+		table.admintable td.paramlist_key {font-weight:normal;text-transform:uppercase;text-align:left;}
+		table.admintable td.paramlist_value label {text-transform:none;}
+		table.admintable td.key, table.admintable td.paramlist_key,.pane-sliders .content,.pane-sliders .panel h3, div.panel fieldset {background:none;}
+		div.panel fieldset {margin-bottom:0;padding-bottom:0;}
+		table.admintable td.key, table.admintable td.paramlist_key {border:none;}
+		form label, form span.faux-label {color:#394a12;}
+		.panelform input, .panelform select{padding:5px;border-radius:3px; }
+		.panelform input[type="radio"]{margin: 10px 5px 0 0;}
+		#jform_params_target { width: 110px;}	
+		fieldset.panelform label, fieldset.panelform div.paramrow label, fieldset.panelform span.faux-label { padding: 5px 5px 0 0;}
+  .pane-toggler-down span {
+    background: url("../modules/mod_cinch_menu/tmpl/images/arrows_ext.png") no-repeat scroll bottom left transparent !important;
+    padding: 7px 0px 7px 40px;
+    padding-left:34px!important;
+    font-size: 15px;
+    font-weight:normal;
+   color:#394a12;
+}
+.pane-toggler span {
+    background: url("../modules/mod_cinch_menu/tmpl/images/arrows_ext.png") no-repeat top left transparent !important;
+    padding: 7px 0px 7px 40px;
+    padding-left:34px!important;
+    font-size: 15px;
+    font-weight:normal;
+    color:#394a12;
+   }
+	</style>
+	Cinch menu is a responsive vertical or horizontal menu with many options.
+	]]></description>
+	
+	<files>
+		<filename module="mod_cinch_menu">mod_cinch_menu.php</filename>		
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+        <folder>core</folder>
+         <folder>elements</folder>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_cinch_menu/elements">
+            <fieldset name="basic" label = "Menu Options">
+				<field label="Version Check" type="upgradecheck" />
+            	<field name="moduleclass_sfx" type="text" default = "" label="Module class sufix" description="module class sufix"/>
+				<field name="menutype" type="menu" label="Select a Menu" description="choose a menu for the module" />                
+				<field name="startlevel" type="list" default="1" label="Start level" description="start level">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+				</field>
+				<field name="endlevel" type="list" default="all" label="End level" description="end level">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="all">All</option>
+				</field>
+				<field name="type" type="radio" default = "flyout" class="btn-group" label="Menu Type" description="Menu type options">
+					<option value="accordion">Accordion</option>
+					<option value="flyout">Flyout</option>
+				</field>
+				<field name="stype_layout" type="radio" default ="vertical" class="btn-group" label="Style Flyout" description="Horizontal or Vertical">
+					<option value="horizontal">Horizontal</option>
+         			<option value="vertical">Vertical</option>
+				</field>				
+				<field name="event" type="radio" default="click" class="btn-group" label="Sub Menu Activation" description="event for sliding">
+					<option value="click">Click</option>
+                    <option value="mouseover">Hover</option>
+				</field>
+				<field name="duration" type="text" default = "300" label="Animation Duration" description="arcordion duration"/>                                               
+        
+				<field name="showsub" type="hidden" default="true" class="btn-group" label="Show Sub Level" description="show sub level">
+					<option value="false">No</option>
+                    <option value="true">Yes</option>
+				</field>
+				<field name="subwidth" type="text" default="200" label="Sub Menu Width" description="width of sub menu" />
+				
+				<field name="menu_direction" type="radio" default="left" class="btn-group" label="Sub Menu Direction" description="Flyout submenu direction">
+					<option value="right">Left</option>
+                    <option value="left">Right</option>
+				</field>						
+				<field name="mainitemcolor" type="color" default="#121212" label="Background color" description="background color"/>	
+				<field name="textlinkcolor" type="color" default="#FFFFFF" label="Text link color" description="text link color"/>
+				<field name="texthovercolor" type="color" default="#A7080C" label="Text hover color" description="text hover color"/>
+				<field name="textalign" type="radio" default="left" class="btn-group" label="Menu text align" description="menu text align">
+					<option value="left">Left</option>
+                   	<option value="right">Right</option>
+				</field>	
+				<field name="showbullet" type="radio" default="true" class="btn-group" label="Show Plus/Minus" description="Show Plus Minus indicator">
+					<option value="false">No</option>
+                    			<option value="true">Yes</option>				
+                 		</field>
+            			<field name="bulletalign" type="radio" default="right" class="btn-group" label="Plus/Minus align" description="Plus Minus align">
+					<option value="left">Left</option>
+                    			<option value="right">Right</option>
+				</field>
+				
+			</fieldset>
+            
+			<fieldset name="advanced"> 
+				<field name="jquery" type="radio" default="1" class="btn-group" label="Include jQuery Library" description="Include jQuery Library">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>                
+			</fieldset>	
+      </fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Cinch Menu Auto Updater">http://www.pixelpointcreative.com/autoupdates/cinchmenu.xml</server>
+	</updateservers>
+</extension>
