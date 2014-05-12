@@ -38,21 +38,21 @@ ul.accordion-menu a:focus {
 	font-family:Arial;
 	background:none;
 }
-ul.accordion-menu li > .item-wrapper > .menu-button-left,
-ul.accordion-menu li > .item-wrapper > .menu-button-right {
+ul.accordion-menu.button-left li > .item-wrapper > .menu-button,
+ul.accordion-menu.button-right li > .item-wrapper > .menu-button {
 	padding:12px 0px;
 	line-height:10px;
 }
-ul.accordion-menu li > .item-wrapper > .menu-button-left {
+ul.accordion-menu.button-left li > .item-wrapper > .menu-button {
 	float:left;
 }
-ul.accordion-menu li > .item-wrapper > .menu-button-right {
+ul.accordion-menu.button-right li > .item-wrapper > .menu-button {
 	float:right;
 }
-ul.accordion-menu li > .item-wrapper > .menu-button-left > img {
+ul.accordion-menu.button-left li > .item-wrapper > .menu-button > img {
 	padding-left:10px;
 }
-ul.accordion-menu li > .item-wrapper > .menu-button-right > img {
+ul.accordion-menu.button-right li > .item-wrapper > .menu-button > img {
 	padding-right:10px;
 }
 ul.accordion-menu li  > .item-wrapper > .menu-link {
@@ -82,13 +82,13 @@ ul.accordion-menu-right li > .item-wrapper > .menu-link > a {
 ul.accordion-menu > li > .item-wrapper > .menu-link > a {
 	font-weight:bold;
 }
-ul.accordion-menu li > .item-wrapper:after {
-	content: ".";
+/* ul.accordion-menu li > .item-wrapper:after {
+	content:".";
 	visibility: hidden;
-	display: block;
+	display:block;
 	height: 0;
 	clear: both;
-}
+} */
 
 ul.accordion-menu li > .ul-wrapper {
 	display:none;

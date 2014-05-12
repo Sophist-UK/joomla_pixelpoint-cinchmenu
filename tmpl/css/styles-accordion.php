@@ -22,4 +22,8 @@ $style = <<<EOT
 	#accordion_menu_{$module->id} li.current > .item-wrapper a {
 		color: {$textHoverColor};
 	}
+	#accordion_menu_{$module->id} li.open,
+	#accordion_menu_{$module->id} li:hover {
+		background: {$bgHoverColor};
+	}
 EOT;
