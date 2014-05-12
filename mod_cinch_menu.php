@@ -15,6 +15,9 @@ $moduleURI = JURI::base(true).DS."modules/mod_cinch_menu/";
 $imagesURI = $moduleURI."tmpl/images";
 
 $menu_direction = $params->get("menu_direction");
+// XML file has Left/Right switched - can't change XML or sites will change direction so fix it here
+$menu_direction = $menu_direction == "left" ? "right" : "left";
+
 $menuType = $params->get("menutype");
 $startLevel = $params->get("startlevel", 1);
 $endLevel = $params->get("endlevel", "all");
@@ -27,6 +30,7 @@ $textAlign = $params->get("textalign", "left");
 $mainItemColor = $params->get("mainitemcolor", "#ffffff");
 $textLinkColor = $params->get("textlinkcolor", "#a3a3a3");
 $textHoverColor = $params->get("texthovercolor", "#ed8000");
+$bgHoverColor = $params->get("bghovercolor", "#e8e8e8");
 $showBullet = $params->get("showbullet", "true");
 $bulletImage = $imagesURI."/plus.png";
 $bulletActive = $imagesURI."/minus.png";
