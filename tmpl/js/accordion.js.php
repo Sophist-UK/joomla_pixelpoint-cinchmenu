@@ -15,12 +15,6 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
 var onProcess = false;
 jQuery(document).ready(function($){
 	var acMenu = $("#accordion_menu_<?php echo $module->id;?>");
-	acMenu.children("li").first().addClass("first");
-	acMenu.children("li").last().addClass("last");
-	acMenu.find("ul").each(function() {
-		$(this).children("li").first().addClass("first");
-		$(this).children("li").last().addClass("last");
-	});
 	acMenu.find("a").click(function(){
 		if ($(this).attr("target") == '_blank') {
 			window.open($(this).attr("href"));
@@ -37,14 +31,6 @@ jQuery(document).ready(function($){
 	} catch(e){
 		console.log(e.message);
 	}
-//	if(current.length != 0){
-//		while(!current.parent().hasClass("accordion-menu")){
-//			if(current.parent().prop("li")){
-//				current.parent().addClass("opened");
-//			}
-//			current = current.parent();
-//		}
-//	}
 	$("#accordion_menu_<?php echo $module->id;?> li.opened > .ul-wrapper").css("display","block");
 	$("#accordion_menu_<?php echo $module->id;?> li.opened > .item-wrapper .menu-button img").attr("src", "<?php echo $bulletActive;?>");
 
