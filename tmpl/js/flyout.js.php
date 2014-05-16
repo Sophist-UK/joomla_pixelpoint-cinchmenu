@@ -50,9 +50,9 @@ jQuery(document).ready(function($){
 		return false;
 	});
 	$("body").click(function(){
-		$(".flyout-menu .opened").removeClass("opened");
-		$(".flyout-menu .ul-wrapper").hide(<?php echo $duration;?>);
-		$(".flyout-menu .menu-button > img").attr("src", "<?php echo $bulletImage;?>");
+		$("#flyout_menu_<?php echo $module->id;?> .opened").removeClass("opened");
+		$("#flyout_menu_<?php echo $module->id;?> .ul-wrapper").hide(<?php echo $duration;?>);
+		$("#flyout_menu_<?php echo $module->id;?> .menu-button > img").attr("src", "<?php echo $bulletImage;?>");
 	});
 });
 <?php }else{ ?>
