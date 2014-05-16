@@ -98,7 +98,8 @@ ul.flyout-menu.vertical.msie7 > li > .item-wrapper > .menu-link,
 ul.flyout-menu.vertical.msie8 > li > .item-wrapper > .menu-link {
 	float:none;
 }
-ul.flyout-menu .menu-link a {
+ul.flyout-menu .menu-link a,
+ul.flyout-menu .menu-link p {
 	min-height:15px;
 	font-size:12px;
 	text-decoration:none;
@@ -182,16 +183,20 @@ ul.flyout-menu.horizontal.msie8 > li > .ul-wrapper {
 		right:0;
 	}
 */
-	ul.flyout-menu.text-left li li > .item-wrapper > .menu-link > a {
+	ul.flyout-menu.text-left li li > .item-wrapper > .menu-link > a,
+	ul.flyout-menu.text-left li li > .item-wrapper > .menu-link > p {
 		padding-left:20px;
 	}
-	ul.flyout-menu.text-left li li li > .item-wrapper > .menu-link > a {
+	ul.flyout-menu.text-left li li li > .item-wrapper > .menu-link > a,
+	ul.flyout-menu.text-left li li li > .item-wrapper > .menu-link > p {
 		padding-left:30px;
 	}
-	ul.flyout-menu.text-left li li li li > .item-wrapper > .menu-link > a {
+	ul.flyout-menu.text-left li li li li > .item-wrapper > .menu-link > a,
+	ul.flyout-menu.text-left li li li li > .item-wrapper > .menu-link > p {
 		padding-left:40px;
 	}
-	ul.flyout-menu.text-left li li li li li > .item-wrapper > .menu-link > a {
+	ul.flyout-menu.text-left li li li li li > .item-wrapper > .menu-link > a,
+	ul.flyout-menu.text-left li li li li li > .item-wrapper > .menu-link > p {
 		padding-left:50px;
 	}
 }

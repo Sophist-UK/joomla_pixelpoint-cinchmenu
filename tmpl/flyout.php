@@ -91,7 +91,11 @@ if (isset($menus) && count($menus)){
 				break;
 		endswitch;
 		$icon_menu = ($menus[$i]->menu_image != '')?'<img src='.JURI::base(true).DS.$menus[$i]->menu_image.' alt="menu icon" />':'';
-		$divLink = "			<div class='menu-link'><a".$target." href='".$menus[$i]->flink."'>".$icon_menu.$menus[$i]->title."</a></div>\r\n";
+		if ($menus[$i]->flink !== '') {
+			$divLink = "			<div class='menu-link'><a".$target." href='".$menus[$i]->flink."'>".$icon_menu.$menus[$i]->title."</a></div>\r\n";
+		} else {
+			$divLink = "			<div class='menu-link'>".$icon_menu.$menus[$i]->title."</div>\r\n";
+		}
 		$li.=$divLink;
 		if($direction=='horizontal'){
 			$li.="			<div style='clear:both;'></div>\r\n";
