@@ -76,10 +76,10 @@ ul.flyout-menu.button-left .menu-button {
 	float:left;
 }
 ul.flyout-menu.button-right .menu-button img {
-	padding-right:10px;
+	padding:0 10px 0 5px;
 }
 ul.flyout-menu.button-left .menu-button img {
-	padding-left:10px;
+	padding:0 5px 0 10px;
 }
 ul.flyout-menu > li > .item-wrapper > .menu-link > a {
 	font-weight:bold;
@@ -228,6 +228,14 @@ ul.flyout-menu.horizontal.msie8 > li > .ul-wrapper {
 	ul.flyout-menu.flyout-left .ul-wrapper {
 		right:100%;
 	}
+/*
+	ul.flyout-menu.horizontal.flyout-right ul .ul-wrapper {
+		left:0;
+	}
+	ul.flyout-menu.horizontal.flyout-left ul .ul-wrapper {
+		right:0;
+	}
+*/
 	ul.flyout-menu.text-left li li > .item-wrapper > .menu-link > a,
 	ul.flyout-menu.text-left li li li > .item-wrapper > .menu-link > a,
 	ul.flyout-menu.text-left li li li li > .item-wrapper > .menu-link > a,
