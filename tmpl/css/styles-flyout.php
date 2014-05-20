@@ -15,7 +15,6 @@ $style = <<<EOT
 	#flyout_menu_{$module->id} {
 		background: {$mainItemColor};
 	}
-	#flyout_menu_{$module->id} .ul-wrapper,
 	#flyout_menu_{$module->id} ul {
 		background: {$mainItemColor};
 	}

@@ -228,14 +228,6 @@ ul.flyout-menu.horizontal.msie8 > li > .ul-wrapper {
 	ul.flyout-menu.flyout-left .ul-wrapper {
 		right:100%;
 	}
-/*
-	ul.flyout-menu.horizontal.flyout-right ul .ul-wrapper {
-		left:0;
-	}
-	ul.flyout-menu.horizontal.flyout-left ul .ul-wrapper {
-		right:0;
-	}
-*/
 	ul.flyout-menu.text-left li li > .item-wrapper > .menu-link > a,
 	ul.flyout-menu.text-left li li li > .item-wrapper > .menu-link > a,
 	ul.flyout-menu.text-left li li li li > .item-wrapper > .menu-link > a,
