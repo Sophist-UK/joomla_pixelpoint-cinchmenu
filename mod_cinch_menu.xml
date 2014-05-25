@@ -2,12 +2,12 @@
 <extension type="module" version="3.3" client="site"	method="upgrade">
 	<name>Cinch Menu</name>
      <author>Pixel Point Creative - Cinch Menu Module</author>
-     <creationDate>March 2013</creationDate>
+     <creationDate>May 2014</creationDate>
      <copyright>Copyright (c) Pixel Point Creative LLC.</copyright>
      <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
      <authorEmail>info@pixelpointcreative.com</authorEmail>
      <authorUrl>www.pixelpointcreative.com</authorUrl>
-     <version>1.7</version>
+     <version>1.8</version>
 	<description>Cinch menu is a responsive vertical or horizontal menu with many options.</description>
 
 	<files>

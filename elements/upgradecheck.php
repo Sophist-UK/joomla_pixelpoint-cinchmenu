@@ -5,7 +5,7 @@
 * See: http://www.gnu.org/copyleft/gpl.html
 * Copyright (c) Pixel Point Creative LLC.
 * More info at http://www.pixelpointcreative.com
-* Last Updated: 3/14/13
+* Last Updated: 5/25/14
 */
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
@@ -24,7 +24,7 @@ class JFormFieldUpgradecheck extends JFormField {
 		if(!function_exists("curl_init")) return 'cURL is not supported by your server. Please contact your hosting provider to enable this capability.';
 		//If cURL is supported, check the current version available.
 		else {
-			$version = 1.7;
+			$version = 1.8;
 			$target = 'http://www.pixelpointcreative.com/upgradecheck/cinchmenu/index.txt';
 			$curl = curl_init();
 			curl_setopt($curl, CURLOPT_URL, $target);

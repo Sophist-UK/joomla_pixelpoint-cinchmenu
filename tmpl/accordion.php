@@ -5,7 +5,7 @@
 * See: http://www.gnu.org/copyleft/gpl.html
 * Copyright (c) Pixel Point Creative LLC.
 * More info at http://www.pixelpointcreative.com
-* Last Updated: 5/13/14
+* Last Updated: 5/25/14
 * Additional improvements by Paul @ Protopia.co.uk
 */
 // No direct access.
@@ -30,15 +30,12 @@ if(isset($menus) && count($menus)){
 ?>
 	<ul class='accordion-menu text-<?php echo $textAlign;?> button-<?php echo $bulletAlign;?>' id='accordion_menu_<?php echo $module->id;?>'>
 <?php
-	$countUlOpened = 1;
-	$level = 1;
+	$level = 0;
 	$menu = $app->getMenu();
 	$active = ($menu->getActive()) ? $menu->getActive() : $menu->getDefault();
 	$path = $active->tree;
 
 	for($i = 0; $i < count($menus); $i++){
-		if($i == 0){$countUlOpened++;
-		}
 		$classes = array();
 		if(in_array($menus[$i]->id, $path)){
 			$classes[] = "current";
@@ -96,14 +93,12 @@ if(isset($menus) && count($menus)){
 
 		if ($i < count($menus)-1 && $menus[$i+1]->level > $menus[$i]->level) {
 			echo "	<div class='ul-wrapper'><ul>\r\n";
-			$countUlOpened++;
 			$level++;
 		}
 		if ($i < count($menus)-1 && $menus[$i+1]->level < $menus[$i]->level) {
 			echo "		</li>\r\n";
 			for($j = 0; $j < $menus[$i]->level - $menus[$i+1]->level; $j++) {
 				echo "	</ul></div></li>\r\n";
-				$countUlOpened--;
 				$level--;
 			}
 		}
@@ -111,11 +106,9 @@ if(isset($menus) && count($menus)){
 			echo "	</li>\r\n";
 		}
 	}
-	for ($i=0; $i < $countUlOpened - 1; $i++){
+	for ($i=0; $i < $level; $i++){
 		echo "	</li></ul></div>\r\n";
 	}
-	if ($countUlOpened > 1) {
-		echo "	</li></ul>\r\n";
-	}
+	echo "	</li></ul>\r\n";
 }
 ?>
