@@ -94,7 +94,7 @@ if (isset($menus) && count($menus)){
 		if ($menus[$i]->flink !== '') {
 			$divLink = "			<div class='menu-link'><a".$target." href='".$menus[$i]->flink."'>".$icon_menu.$menus[$i]->title."</a></div>\r\n";
 		} else {
-			$divLink = "			<div class='menu-link'>".$icon_menu.$menus[$i]->title."</div>\r\n";
+			$divLink = "			<div class='menu-link'><p>".$icon_menu.$menus[$i]->title."</p></div>\r\n";
 		}
 		$li.=$divLink;
 		if($direction=='horizontal'){
