@@ -4,7 +4,7 @@
 * See: http://www.gnu.org/copyleft/gpl.html
 * Copyright (c) Pixel Point Creative LLC.
 * More info at http://www.pixelpointcreative.com
-* Last Updated: 5/13/14
+* Last Updated: 5/25/14
 * Additional improvements by Paul @ Protopia.co.uk
 */
 
@@ -106,7 +106,7 @@ ul.flyout-menu .menu-link p {
 	font-size:12px;
 	text-decoration:none;
 	display:block;
-	padding:9px;
+	padding:10px 9px 9px 9px;
 	box-sizing:border-box;
 	font-family:arial;
 }
