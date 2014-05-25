@@ -24,7 +24,7 @@ class JFormFieldUpgradecheck extends JFormField {
 		if(!function_exists("curl_init")) return 'cURL is not supported by your server. Please contact your hosting provider to enable this capability.';
 		//If cURL is supported, check the current version available.
 		else {
-			$version = 1.6;
+			$version = 1.7;
 			$target = 'http://www.pixelpointcreative.com/upgradecheck/cinchmenu/index.txt';
 			$curl = curl_init();
 			curl_setopt($curl, CURLOPT_URL, $target);
@@ -33,16 +33,16 @@ class JFormFieldUpgradecheck extends JFormField {
 			$str = curl_exec($curl);
 			curl_close($curl);
 
-			$message = '<div style="float:left;clear: both;"><label style="max-width:100%"><b>Installed Version '.$version.'</b> ';
+			$message = '<label style="max-width:100%"><b>Installed Version '.$version.'</b> ';
 
 			//If the current version is out of date, notify the user and provide a download link.
 			if ($version < $str)
 				$message = $message . '&nbsp;&nbsp;|&nbsp;&nbsp;<b>Latest Version '.$str.'</b><br />
-				<a href="index.php?option=com_installer&view=update" >Update</a>&nbsp;&nbsp;|&nbsp; &nbsp;<a href="http://www.pixelpointcreative.com/support.html" target="_blank">Get Help</a> &nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.pixelpointcreative.com/changelogs/cinchmenu.txt" target="_blank">View the Changelog</a></label></div>';
+				<a href="index.php?option=com_installer&view=update" >Update</a>&nbsp;&nbsp;|&nbsp; &nbsp;<a href="http://www.pixelpointcreative.com/support.html" target="_blank">Get Help</a> &nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.pixelpointcreative.com/changelogs/cinchmenu.txt" target="_blank">View the Changelog</a></label>';
 			//If the current version is up to date, notify the user.
 			elseif (($version == $str) || ($version > $str))
-				$message = $message . '</br>There are no updates available at this time.</br>Having Trouble?  <a href="http://www.pixelpointcreative.com/support.html" target="_blank">Get Help</a> </label></div>';
-			echo '<div style="float:left;clear: both;"><img width="180" height="80" border="0" src="../modules/mod_cinch_menu/elements/cinch_menu_logo.png" title="Cinch Menu" alt="Cinch Menu"></div>';
+				$message = $message . '</br>There are no updates available at this time.</br>Having Trouble?  <a href="http://www.pixelpointcreative.com/support.html" target="_blank">Get Help</a> </label>';
+			echo '<img width="180" height="80" border="0" src="../modules/mod_cinch_menu/elements/cinch_menu_logo.png" title="Cinch Menu" alt="Cinch Menu">';
 			return $message;
 		}
 	}

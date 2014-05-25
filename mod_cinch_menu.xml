@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="2.5" client="site"	method="upgrade">
+<extension type="module" version="3.3" client="site"	method="upgrade">
 	<name>Cinch Menu</name>
      <author>Pixel Point Creative - Cinch Menu Module</author>
      <creationDate>March 2013</creationDate>
@@ -7,56 +7,8 @@
      <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
      <authorEmail>info@pixelpointcreative.com</authorEmail>
      <authorUrl>www.pixelpointcreative.com</authorUrl>
-     <version>1.6</version>
-	<description>
-    	<![CDATA[
-	<style type="text/css">
-		.panel {background: #ddd;
-		background-image: -moz-linear-gradient(100% 100% 90deg, rgba(225,225,225,1), rgba(255,255,255,1));
-		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,1)), to(rgba(225,225,225,1)));
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e1e1e1');
-		-moz-border-radius: 2px 2px 2px 2px;
-		-webkit-border-radius: 2px 2px 2px 2px;
-		border-radius: 2px 2px 2px 2px;
-		-moz-box-shadow: 1px 1px 2px #ddd;
-		-webkit-box-shadow: 1px 1px 2px #ddd;
-		border-box-shadow: 1px 1px 2px #ddd;
-		border: 1px solid #ccc;
-		padding: 6px 10px;
-		color: #444;
-		text-decoration: none;}
-		.pane-sliders .title {padding: 4px; }
-		.pane-sliders .panel h3 {border-bottom:none;}
-		.panelform a {color:#828627;}
-		table.admintable td.paramlist_key {font-weight:normal;text-transform:uppercase;text-align:left;}
-		table.admintable td.paramlist_value label {text-transform:none;}
-		table.admintable td.key, table.admintable td.paramlist_key,.pane-sliders .content,.pane-sliders .panel h3, div.panel fieldset {background:none;}
-		div.panel fieldset {margin-bottom:0;padding-bottom:0;}
-		table.admintable td.key, table.admintable td.paramlist_key {border:none;}
-		form label, form span.faux-label {color:#394a12;}
-		.panelform input, .panelform select{padding:5px;border-radius:3px; }
-		.panelform input[type="radio"]{margin: 10px 5px 0 0;}
-		#jform_params_target { width: 110px;}
-		fieldset.panelform label, fieldset.panelform div.paramrow label, fieldset.panelform span.faux-label { padding: 5px 5px 0 0;}
-  .pane-toggler-down span {
-    background: url("../modules/mod_cinch_menu/tmpl/images/arrows_ext.png") no-repeat scroll bottom left transparent !important;
-    padding: 7px 0px 7px 40px;
-    padding-left:34px!important;
-    font-size: 15px;
-    font-weight:normal;
-   color:#394a12;
-}
-.pane-toggler span {
-    background: url("../modules/mod_cinch_menu/tmpl/images/arrows_ext.png") no-repeat top left transparent !important;
-    padding: 7px 0px 7px 40px;
-    padding-left:34px!important;
-    font-size: 15px;
-    font-weight:normal;
-    color:#394a12;
-   }
-	</style>
-	Cinch menu is a responsive vertical or horizontal menu with many options.
-	]]></description>
+     <version>1.7</version>
+	<description>Cinch menu is a responsive vertical or horizontal menu with many options.</description>
 
 	<files>
 		<filename module="mod_cinch_menu">mod_cinch_menu.php</filename>
@@ -140,7 +92,7 @@
 				</field>
 				<field name="mainitemcolor" type="color" default="#FFFFFF" label="Background color"
 					description="The color applied to the background of the menu items."/>
-				<field name="bghovercolor" type="color" default="E8E8E8" label="Background hover color"
+				<field name="bghovercolor" type="color" default="#000" label="Background hover color"
 					description="The color applied to the background of menu items the mouse is hovering over.
 						&lt;br /&gt;Note: Set this to the same color as above to disable background hover color."/>
 				<field name="textlinkcolor" type="color" default="#A3A3A3" label="Text link color"

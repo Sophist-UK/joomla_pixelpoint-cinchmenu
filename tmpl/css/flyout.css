@@ -4,7 +4,8 @@
 * See: http://www.gnu.org/copyleft/gpl.html
 * Copyright (c) Pixel Point Creative LLC.
 * More info at http://www.pixelpointcreative.com
-* Last Updated: 2/18/14
+* Last Updated: 5/13/14
+* Additional improvements by Paul @ Protopia.co.uk
 */
 
 ul.flyout-menu {
@@ -22,6 +23,7 @@ ul.flyout-menu.text-left {
 }
 ul.flyout-menu.horizontal {
 	width:100%;
+	float:left;
 }
 ul.flyout-menu li {
 	position:relative;
@@ -175,14 +177,6 @@ ul.flyout-menu.horizontal.msie8 > li > .ul-wrapper {
 		left:auto;
 		right:auto;
 	}
-/*
-	ul.flyout-menu.horizontal.flyout-right ul .ul-wrapper {
-		left:0;
-	}
-	ul.flyout-menu.horizontal.flyout-left ul .ul-wrapper {
-		right:0;
-	}
-*/
 	ul.flyout-menu.text-left li li > .item-wrapper > .menu-link > a,
 	ul.flyout-menu.text-left li li > .item-wrapper > .menu-link > p {
 		padding-left:20px;
@@ -220,6 +214,8 @@ ul.flyout-menu.horizontal.msie8 > li > .ul-wrapper {
 	ul.flyout-menu.vertical ul,
 	ul.flyout-menu.horizontal ul {
 		border:1px solid #1a1a1a;
+		margin: 0px;
+		padding: 0px;
 	}
 	/* Following needs direction classes so it has sufficient specificity to override non-responsive css */
 	ul.flyout-menu.flyout-right .ul-wrapper {
@@ -228,14 +224,6 @@ ul.flyout-menu.horizontal.msie8 > li > .ul-wrapper {
 	ul.flyout-menu.flyout-left .ul-wrapper {
 		right:100%;
 	}
-/*
-	ul.flyout-menu.horizontal.flyout-right ul .ul-wrapper {
-		left:0;
-	}
-	ul.flyout-menu.horizontal.flyout-left ul .ul-wrapper {
-		right:0;
-	}
-*/
 	ul.flyout-menu.text-left li li > .item-wrapper > .menu-link > a,
 	ul.flyout-menu.text-left li li li > .item-wrapper > .menu-link > a,
 	ul.flyout-menu.text-left li li li li > .item-wrapper > .menu-link > a,
