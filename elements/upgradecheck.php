@@ -24,7 +24,7 @@ class JFormFieldUpgradecheck extends JFormField {
 		if(!function_exists("curl_init")) return 'cURL is not supported by your server. Please contact your hosting provider to enable this capability.';
 		//If cURL is supported, check the current version available.
 		else {
-			$version = 1.8;
+			$version = 1.9;
 			$target = 'http://www.pixelpointcreative.com/upgradecheck/cinchmenu/index.txt';
 			$curl = curl_init();
 			curl_setopt($curl, CURLOPT_URL, $target);
