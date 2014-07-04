@@ -5,11 +5,15 @@
 * See: http://www.gnu.org/copyleft/gpl.html
 * Copyright (c) Pixel Point Creative LLC.
 * More info at http://www.pixelpointcreative.com
-* Last Updated: 2/18/14
+* Last Updated: 7/4/14
 */
 
 // No direct access.
 defined( '_JEXEC' ) or die( 'Restricted access' );
+
+$subWidthA = $subWidth - 22;
+$subWidthLI = $subWidth - 1;
+$subWidthULIE8 = $subWidth + 2;
 
 $style = <<<EOT
 	#flyout_menu_{$module->id} {
